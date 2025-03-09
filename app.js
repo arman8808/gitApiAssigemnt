@@ -19,6 +19,9 @@ app.use(cors());
 app.use(apiLimiter);
 app.use(express.json());
 app.use("/github", githubRoutes);
+app.get('/',async(req,res)=>{
+    res.status(200).json({message:'Server is Live!'})
+})
 
 app.listen(PORT, () => {
   console.log(`Server running at Port ${PORT}`);
